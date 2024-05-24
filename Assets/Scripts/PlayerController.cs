@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -37,5 +38,12 @@ public class PlayerController : MonoBehaviour
 
         //Add jumping animations
         animator.SetBool("IsGrounded", isGrounded);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.CompareTag("Obstacle")){
+            Debug.Log("Obstacle");
+        }
     }
 }
